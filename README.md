@@ -174,7 +174,11 @@ Outputnya akan seperti berikut :
 
 #### 13. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruyyy.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruyyy.pw/js.
 
+Pada soal ini dibuat alias pada file penanjakan.semerub04.pw dengan konfigurasi seperti berikut :
+
 ![soal-tigabelas](img/13.1alias.PNG)
+
+Maka hasilnya akan seperti berikut :
 
 ![soal-tigabelas](img/13.2js.PNG)
 

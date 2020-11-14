@@ -1,19 +1,36 @@
 # Jarkom_Modul2_Lapres_B04
 **Setting utama server dan client**
+![soal-utama](img/utama1.jpg)
+![soal-utama2](img/utama2.jpg)
 
 #### 1. Website utama dengan alamat http://semerub04.pw
+![soal-satu](img/nomor01.jpg)
+![soal-satu1](img/nomor1.jpg)
 
 #### 2. Alias http://www.semerub04.pw
+![soal-dua](img/nomor2.jpg)
 
 #### 3. Subdomain http://penanjakan.semeruyyy.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP Server PROBOLINGGO 
+![soal-tiga](img/nomor3.jpg)
 
 #### 4. reverse domain untuk domain utama
+![soal-empat](img/nomor4.jpg)
+![soal-empat1](img/nomor41.jpg)
 
 #### 5. subdomain dengan alamat http://gunung.semeruyyy.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
+![soal-lima](img/nomor5.jpg)
+![soal-lima1](img/nomor51.jpg)
+![soal-lima2](img/nomor52.jpg)
+![soal-lima](img/nomor53.jpg)
 
 #### 6. subdomain dengan nama http://naik.gunung.semeruyyy.pw, domain ini diarahkan ke IP Server PROBOLINGGO.
+![soal-enam](img/nomor6.jpg)
 
 #### 7. Domain http://semeruyyy.pw memiliki DocumentRoot pada /var/www/semeruyyy.pw. Awalnya web dapat diakses menggunakan alamat http://semeruyyy.pw/index.php/home.
+![soal-tujuh](img/soal7.jpg)
+![soal-tujuh1](img/soal71.jpg)
+![soal-tujuh2](img/soal73.jpg)
+![soal-tujuh3](img/soal74.jpg)
 
 #### 8. diaktifkan mod rewrite agar urlnya menjadi http://semeruyyy.pw/home.
 

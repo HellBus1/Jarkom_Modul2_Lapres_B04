@@ -103,13 +103,21 @@ Pada /etc/bind/delegasi/its.jarkom2020.com kita buat seperti berikut :
 
 #### 8. Domain http://semeruyyy.pw memiliki DocumentRoot pada /var/www/semeruyyy.pw. Awalnya web dapat diakses menggunakan alamat http://semeruyyy.pw/index.php/home.
 
+pada folder /etc/apache2/sites-available kita buat file bernama semerub04.pw yang merupakan hasil kopi dari file default pada folder tersebut, kemudian kita config sebagai berikut :
+
 ![soal-delapan1](img/8.2sites-available.png)
+
+pada DocumentRoot kita arahkan ke /var/www/semerub04.pw yang akan dibuat nanti, folder ini berisi file yang didownload dari 10.151.36.202/semeru.pw.zip. Setelah kita membuat folder semerub04.pw dan diisi file tersebut maka kita bisa langsung mengakses alamat semerub04.pw dan hasilnya seperti berikut :
 
 ![soal-delapan](img/8.1websemerub04pw.png)
 
 #### 9. diaktifkan mod rewrite agar urlnya menjadi http://semeruyyy.pw/home.
 
+Pada soal ini dibuat file .htaccess pada folder semerub04.pw di /var/www sebelumnya dan kita config seperti berikut :
+
 ![soal-sembilan](img/9.1htaccessrewrite.PNG)
+
+dimana kita rewrite nama /index.php/home menjadi home, sehingga hasilnya seperti dua gambar dibawah :
 
 ![soal-sembilan](img/9.2semerub04pwhome.PNG)
 
@@ -127,17 +135,17 @@ Pada /etc/bind/delegasi/its.jarkom2020.com kita buat seperti berikut :
 
 /errors
 
-![soal-sepuluh](img/10.1penanjakanlisting.PNG)
+![soal-sepuluh](img/10.4sitesavailablepenanjakan1.PNG)
+
+![soal-delapan1](img/10.5sitesavailablepenanjakan2.PNG)
 
 ![soal-sepuluh](img/10.2directoryroot.PNG)
 
 ![soal-sepuluh](img/10.3directorypubliccssimagesjavascript.PNG)
 
-![soal-sepuluh](img/10.4sitesavailablepenanjakan1.PNG)
+![soal-sepuluh](img/10.1penanjakanlisting.PNG)
 
-![soal-delapan1](img/10.5sitesavailablepenanjakan2.PNG)
-
-#### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan. (12) Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
+#### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
 
 ![soal-sebelas](img/11.1listingpublic.PNG)
 
@@ -145,36 +153,66 @@ Pada /etc/bind/delegasi/its.jarkom2020.com kita buat seperti berikut :
 
 ![soal-sebelas](img/11.3listingpublicimages.PNG)
 
-![soal-sebelas](img/11.4listingpublic js.PNG)
+![soal-sebelas](img/11.4listingpublicjs.PNG)
 
 ![soal-sebelas](img/11.5sitesavailablepenanjakanlisting.PNG)
 
-#### 12. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruyyy.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruyyy.pw/js.
+### 12. Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
+
+Pada soal ini kita tambahkan 
+```
+ErrorDocument 404 /errors/404.html
+```
+
+pada file penanjakan.semerub04.pw dimana ketika url akan diarahkan ke halaman 404.html pada folder error pada folder penanjakan.semerub04.pw
 
 ![soal-duabelas](img/12.1eror404.PNG)
 
+Outputnya akan seperti berikut :
+
 ![soal-duabelas](img/12.2eror404web.PNG)
 
-#### 13. sedangkan web http://naik.gunung.semeruyyy.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruyyy.pw.
+#### 13. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruyyy.pw/public/javascripts. Karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruyyy.pw/js.
 
 ![soal-tigabelas](img/13.1alias.PNG)
 
 ![soal-tigabelas](img/13.2js.PNG)
 
-#### 14. web http://naik.gunung.semeruyyy.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung” supaya aman dan tidak sembarang orang bisa mengaksesnya.
+#### 14. sedangkan web http://naik.gunung.semeruyyy.pw sudah bisa diakses hanya dengan menggunakan port 8888. DocumentRoot web berada pada /var/www/naik.gunung.semeruyyy.pw.
+
+Untuk soal ini kita cukup mengganti 8080 pada virtual host file naik.gunung.semerub04.pw dengan 8888 kemudian ditambahkan listen 8888 pada file /etc/apache2/ports.conf, konfigurasinya akan seperti berikut :
 
 ![soal-empatbelas](img/14.1port8888.PNG)
 
-#### 15. setiap Bibah mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke http://semeruyyy.pw.
+<!-- TODO -->
 
-![soal-limabelas](img/15.1auth.PNG)
+#### 15. web http://naik.gunung.semeruyyy.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung” supaya aman dan tidak sembarang orang bisa mengaksesnya.
+
+<!-- TODO -->
+
+Pada soal ini kita buat file .htpasswd didalam folder naik.gunung.semerub04.pw lalu dibuat config .htaccess sebagai berikut
 
 ![soal-limabelas](img/15.2htaccess.PNG)
 
-#### 16. Karena pengunjung pada /var/www/penanjakan.semeruyyy.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
+Kemudian outputnya akan seperti berikut :
+
+![soal-limabelas](img/15.1auth.PNG)
+
+#### 16. setiap Bibah mengunjungi IP PROBOLINGGO akan dialihkan secara otomatis ke http://semeruyyy.pw.
+
+Pada soal ini kita cukup menambahkan 
+```
+Redirect / http://www.semerub04.pw 
+```
+
+pada file default dan default-ssl pada folder /etc/apache2/sites-available
 
 ![soal-enambelas](img/16.1redirect.PNG)
 
 ![soal-enambelas](img/16.2redirect2.PNG)
 
+Outputnya akan seperti berikut
+
 ![soal-enambelas](img/16.3redirect3.PNG)
+
+#### 17. Karena pengunjung pada /var/www/penanjakan.semeruyyy.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.

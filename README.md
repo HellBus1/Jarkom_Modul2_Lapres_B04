@@ -157,7 +157,7 @@ dimana kita rewrite nama /index.php/home menjadi home, sehingga hasilnya seperti
 
 ![soal-sebelas](img/11.5sitesavailablepenanjakanlisting.PNG)
 
-### 12. Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
+#### 12. Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
 
 Pada soal ini kita tambahkan 
 ```

@@ -135,9 +135,16 @@ dimana kita rewrite nama /index.php/home menjadi home, sehingga hasilnya seperti
 
 /errors
 
-![soal-sepuluh](img/10.4sitesavailablepenanjakan1.PNG)
+Untuk membuat directory listing, pertama-tama pada konfigurasi web penanjakan.semerub04.pw yang berada di direktori /etc/apache2/sites-available kita arahkah root dari web 
+ke direktori /var/www/penanjakan.semerub04.pw. Selanjutnya kita tambahkan 
 
-![soal-delapan1](img/10.5sitesavailablepenanjakan2.PNG)
+<Directory /var/www/penanjakan.semerub04.pw>
+     Options +Indexes
+ </Directory>
+
+Dengan menambah opsi +Indexes maka dihasilkan tampilan directory listing
+
+![soal-sepuluh](img/10.4sitesavailablepenanjakan1.PNG)
 
 ![soal-sepuluh](img/10.2directoryroot.PNG)
 
@@ -146,6 +153,13 @@ dimana kita rewrite nama /index.php/home menjadi home, sehingga hasilnya seperti
 ![soal-sepuluh](img/10.1penanjakanlisting.PNG)
 
 #### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
+
+Untuk soal no 11, karna folder didalam direktori public tidak diperbolahkan directory listing, maka pada konfigruasi web
+kita  tambahkan 
+
+Option -Indexes
+
+![soal-delapan1](img/10.5sitesavailablepenanjakan2.PNG)
 
 ![soal-sebelas](img/11.1listingpublic.PNG)
 

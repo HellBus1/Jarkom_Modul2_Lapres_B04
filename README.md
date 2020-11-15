@@ -63,7 +63,7 @@ Kemudian dilakukan ping, outputnya seperti berikut :
 
 ![soal-lima](img/nomor53.jpg)
 
-### 6. subdomain dengan alamat http://gunung.semeruyyy.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
+#### 6. subdomain dengan alamat http://gunung.semeruyyy.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO.
 
 Pertama kita buat ns1 dengan tipe A mengarah ke IP MOJOKERTO sebagai tujuan kemudian dibuat subdomain gunung lali diberi nilai tujuan ns1, confignya sebagai berikut:
 
